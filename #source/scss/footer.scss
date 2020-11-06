@@ -1,0 +1,210 @@
+.formSection {
+   margin: 50px 0px 0px 0px;
+   @media (max-width:767.98px){
+		margin: 25px 0px 0px 0px;
+	}
+   &__body {
+      background-color: #e6e621de;
+      border-radius: 8px;
+      padding: 40px 20px;
+      @media (max-width:767.98px){
+         padding: 15px 10px;
+      }
+   }
+   &__title {
+      display: block;
+		text-align: center;
+      font-size: 25px;
+      & a {
+         color: #000;
+         &:hover{
+            color: #ca3d36;
+         }
+      }
+      & span {
+         font-size: 28px;
+         font-weight: 500;
+         @media (max-width:767.98px){
+            font-size: 22px;
+         }
+      }
+      @media (max-width:767.98px){
+         font-size: 20px;
+      }
+   }
+   &__form {
+      max-width: 500px;
+      margin: 20px auto 0px auto;
+   }
+   &__name {
+      display: block;
+		margin: 0px 0px 10px 0px;
+		width: 100%;
+		height: 30px;
+		border: 1px solid #aaaaaa;
+      border-radius: 8px;
+      padding: 0px 15px;
+		transition: all 0.5s ease 0s;
+		&:focus{
+			transition: all 0.5s ease 0s;
+			box-shadow: 2px 2px 5px 1px #005bc1;
+		}
+   }
+   &__phone {
+      display: block;
+		margin: 0px 0px 10px 0px;
+		width: 100%;
+		height: 30px;
+		border: 1px solid #aaaaaa;
+      border-radius: 8px;
+      padding: 0px 15px;
+		transition: all 0.5s ease 0s;
+		&:focus{
+			transition: all 0.5s ease 0s;
+			box-shadow: 2px 2px 5px 1px #005bc1;
+		}
+   }
+   &__mail {
+      display: block;
+		margin: 0px 0px 10px 0px;
+		width: 100%;
+		height: 30px;
+		border: 1px solid #aaaaaa;
+      border-radius: 8px;
+      padding: 0px 15px;
+		transition: all 0.5s ease 0s;
+		&:focus{
+			transition: all 0.5s ease 0s;
+			box-shadow: 2px 2px 5px 1px #005bc1;
+		}
+   }
+   &__text {
+      display: block;
+		margin: 0px 0px 10px 0px;
+		width: 100%;
+		height: 30px;
+		border: 1px solid #aaaaaa;
+      border-radius: 8px;
+      padding: 0px 15px;
+		transition: all 0.5s ease 0s;
+		&:focus{
+			transition: all 0.5s ease 0s;
+			box-shadow: 2px 2px 5px 1px #005bc1;
+		}
+   }
+   &__btn {
+      display: block;
+		height: 35px;
+		width: 160px;
+		background-color: #005bc1;
+		border-radius: 8px;
+		color: #ffffff;
+		transition: all 0.5s ease 0s;
+		&:hover {
+			background: #0072ff;
+			transition: all 0.5s ease 0s;
+      }
+      @media (max-width:767.98px){
+			height: 30px;
+			width: 130px;
+			font-size: 10px;
+		}
+   }
+}
+//=====================================================
+.footer {
+   background-color: #474747;
+   margin: 10px 0px 0px 0px;
+   &__container {
+      max-width: 900px;
+      margin: 0 auto;
+   }
+   &__top {
+      padding: 30px 0px 15px 0px;
+      border-bottom: 1px solid #fff;
+   }
+   &__contact {
+      display: flex;
+      @media (max-width:767.98px){
+         flex-direction: column;
+         align-items: center;
+      }
+   }
+   &__tel {
+      flex: 0 1 33.333%;
+      display: flex;
+      justify-content: left;
+      & a {
+         margin: 0px 15px 0px 0px;
+         font-size: 14px;
+         color: #ffffff;
+         &:last-child{
+            margin: 0px;
+         }
+      }
+      @media (max-width:767.98px){
+         margin: 0px 0px 10px 0px;
+      }
+   }
+   &__mail {
+      flex: 0 1 33.333%;
+      display: flex;
+      justify-content: center;
+      & a {
+         font-size: 15px;
+         color: #ffffff;
+      }
+      @media (max-width:767.98px){
+         margin: 0px 0px 10px 0px;
+      }
+   }
+   &__address {
+      flex: 0 1 33.333%;
+      display: flex;
+      justify-content: center;
+      & address {
+         font-size: 15px;
+         color: #ffffff;
+         font-style: normal;
+      }
+   }
+   &__center {
+      padding: 15px 0px;
+      border-bottom: 1px solid #fff;
+   }
+   &__menu {
+      display: flex;
+      justify-content: center;
+      margin: 0px 0px 10px 0px;
+   }
+   &__list {
+      display: flex;
+      @media (max-width:479.98px){
+         flex-direction: column;
+      }
+   }
+   &__link {
+      & a {
+         margin: 0px 15px 0px 0px;
+         font-size: 15px;
+         color: #ffffff;
+      }  
+      @media (max-width:479.98px){
+         margin: 0px 0px 10px 0px;
+      }
+   }
+   &__messengers {
+      display: flex;
+      justify-content: center;
+      & img {
+         margin: 0px 5px;
+         max-width: 35px;
+      }
+   }
+   &__copy {
+      padding: 20px 0px;
+      text-align: center;
+      color: #ffffff;
+      font-size: 15px;
+   }
+}
