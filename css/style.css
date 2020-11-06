@@ -213,10 +213,10 @@
   }
   .header__arrow {
     right: 120px;
-    top: 17px;
-    border-top: 13px solid #b9b9b9;
-    border-left: 13px solid transparent;
-    border-right: 13px solid transparent;
+    top: 14px;
+    border-top: 16px solid #b9b9b9;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
   }
 }
 @media (max-width: 767.98px) and (max-width: 479.98px) {
