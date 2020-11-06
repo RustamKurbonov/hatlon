@@ -134,7 +134,7 @@ let sliderReviews = () => {
       for (let f = 0; f < dots.length; f++) {
          dots[f].classList.remove('activeDot');
       }
-      if(step === 0){
+      if(step <= 0){
          offset = lineWidth - slides[1].offsetWidth;
          step = slides.length - 1;
          dots[step].classList.add('activeDot');
