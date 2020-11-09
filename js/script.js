@@ -1,5 +1,6 @@
 window.onload = function () {
    arrowMenu();
+   сallBackFunction();
    menuBurger();
    headerSlider();
    calculator();
@@ -168,4 +169,22 @@ let sliderReviews = () => {
       }
    }
    
+}
+let сallBackFunction = () => {
+   let сallBack = document.getElementById('сallBack');
+   let widthCallBack = 100;
+   let сallBackBody = document.getElementById('сallBackBody');
+   
+   call = setInterval(() => {
+      if (widthCallBack >= 150){
+         widthCallBack = 100;
+         сallBack.style.width = widthCallBack;
+         сallBack.style.height = widthCallBack;
+      } else if (widthCallBack >= 100) {
+         widthCallBack++;
+         сallBack.style.width = widthCallBack;
+         сallBack.style.height = widthCallBack;
+      }   
+   }, 1000);
+   console.log(сallBack.style);
 }
