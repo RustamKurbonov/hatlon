@@ -470,6 +470,7 @@ body.touch .header__arrow{
 }
 //=================================================
 .сallBack {
+	/////
 	position: fixed;
 	display: flex;
 	align-items: center;
@@ -541,10 +542,12 @@ body.touch .header__arrow{
 		border: 3px solid #5f8cbe;
 		padding: 8px;
 		z-index: 16;
+		transition: background-color 0.5s ease 0s;
 		& img {
 			position: absolute;
 			z-index: 3;
 			width: 30px;
+			transition: all 0.5s ease 0s;
 		}
 		&:before{
 			content: '';
@@ -559,5 +562,13 @@ body.touch .header__arrow{
 			z-index: 1;
 			opacity: 0.4;
 		}
+		&:hover{
+			background-color: rgb(173, 173, 190);
+			transition: background-color 0.5s ease 0s;
+			& img {
+				width: 35px;
+				transition: all 0.5s ease 0s;
+			}
+		} 
 	}
 }

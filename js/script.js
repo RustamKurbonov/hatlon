@@ -3,8 +3,6 @@ window.onload = function () {
    сallBackFunction();
    menuBurger();
    headerSlider();
-   calculator();
-   sliderReviews();
 }
 let arrowMenu = () => {
    let isMobile = {
@@ -79,113 +77,37 @@ function headerSlider() {
    }, 2000);
 
 }
-let calculator = () => {
-   let room = document.getElementById('room');
-   let repair = document.getElementById('repair');
-   let volume = document.getElementById('volume');
-   let sum = document.getElementById('sum');
-
-   room.onchange = calc;
-   repair.onchange = calc;
-   volume.onchange = calc;
-}
-let calc = () => {
-   if (room.value > 0 && repair.value > 0 && volume.value !== '' && volume.value > 0){
-      sum.value = (room.value * repair.value * volume.value) / 100;
-   } else {
-      sum.value = '';
-   }
-}
-let sliderReviews = () => {
-   let line = document.querySelector('.reviews__line');
-   let slides = document.querySelectorAll('.reviews__slide');
-   let btnLeft = document.querySelector('.reviews__btn-left');
-   let btnRight = document.querySelector('.reviews__btn-right');
-   let dots = document.querySelectorAll('.reviews__dot');
-   dots[0].classList.add('activeDot');
-
-   let widthArray = [0];
-   let lineWidth = 0;
-   let step = 0;
-   let offset = 0;
-
-   for (let i = 0; i < slides.length; i++) {
-      widthArray.push(slides[i].offsetWidth + 3);
-      lineWidth += slides[i].offsetWidth + 3;
-   }
-
-   line.style.width = lineWidth + 'px';
-
-   for (let q = 0; q < dots.length; q++) {
-      dots[q].addEventListener('click', function (e) {
-         for(let f = 0; f < dots.length; f++){
-            dots[f].classList.remove('activeDot');
-         }
-         e.target.classList.add('activeDot');
-         step = e.target.id;
-         offset = 0;
-         for(let a = 0; a <= step; a++){
-            offset += widthArray[a];
-         }
-         line.style.left = -offset + 'px';
-      })
-   }
-
-   btnLeft.onclick = function(){
-      for (let f = 0; f < dots.length; f++) {
-         dots[f].classList.remove('activeDot');
-      }
-      if(step <= 0){
-         offset = lineWidth - slides[1].offsetWidth;
-         step = slides.length - 1;
-         dots[step].classList.add('activeDot');
-         line.style.left = -offset + 'px';
-      } else {
-         step--;
-         if(step === 0){
-            offset = 0;
-         } else {
-            offset -= widthArray[step];
-         }
-         dots[step].classList.add('activeDot');
-         line.style.left = -offset + 'px';
-      }
-   }
-
-   btnRight.onclick = function () {
-      for (let f = 0; f < dots.length; f++) {
-         dots[f].classList.remove('activeDot');
-      }
-      if (step >= slides.length - 1) {
-         offset = 0;
-         step = 0;
-         dots[step].classList.add('activeDot');
-         line.style.left = -offset + 'px';
-      } else {
-         step++;
-         offset += widthArray[step];
-         dots[step].classList.add('activeDot');
-         line.style.left = -offset  + 'px';
-      }
-   }
-   
-}
 let сallBackFunction = () => {
    let сallBackBody = document.getElementById('сallBackBody');
+   let сallBack = document.getElementById('сallBack');
    let сallBackForm = document.querySelector('.сallBack__form');
    let transform = 0;
+   let x = 60;
+   let y = 100;
+   let rightBody = 30;
 
    сallBackBody.onclick = () => {
       сallBackForm.classList.toggle('activeCallBack');
    }
 
    call = setInterval(() => {
-      if (transform >= 30){
+      if (transform >= 30) {
          transform = 0;
          сallBackBody.style.transform = 'rotate(' + transform + 'deg)';
       } else if (transform >= 0) {
          transform++;
          сallBackBody.style.transform = 'rotate(' + transform + 'deg)';
       }
-   }, 20);
+   }, 30);
+   innerBorder = setInterval(() => {
+      if (x >= 75) {
+         x = 60;
+         сallBackBody.style.width = x + 'px';
+         сallBackBody.style.height = x + 'px';
+      } else if (x >= 60) {
+         x++;
+         сallBackBody.style.width = x + 'px';
+         сallBackBody.style.height = x + 'px';
+      }
+   }, 60);
 }
