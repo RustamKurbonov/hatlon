@@ -107,13 +107,20 @@
          font-size: 16px;
          & th {    
             &:last-child{
-               max-width: 250px;
+               width: 250px;
+               @media (max-width:767.98px){
+                  width: 140px;
+               }
             }
          }
       }
       & th,td {
          padding: 14px;
          border: 1px solid #b9b9b9;
+         @media (max-width:479.98px){
+            padding: 7px;
+            font-size: 12px;
+         }
       }
       & tbody {
          border: 3px solid #b9b9b9;

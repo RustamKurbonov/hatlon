@@ -1158,11 +1158,22 @@ body.touch .header__arrow {
   font-size: 16px;
 }
 .fundamentnyie-rabotyi__table thead th:last-child {
-  max-width: 250px;
+  width: 250px;
+}
+@media (max-width: 767.98px) {
+  .fundamentnyie-rabotyi__table thead th:last-child {
+    width: 140px;
+  }
 }
 .fundamentnyie-rabotyi__table th, .fundamentnyie-rabotyi__table td {
   padding: 14px;
   border: 1px solid #b9b9b9;
+}
+@media (max-width: 479.98px) {
+  .fundamentnyie-rabotyi__table th, .fundamentnyie-rabotyi__table td {
+    padding: 7px;
+    font-size: 12px;
+  }
 }
 .fundamentnyie-rabotyi__table tbody {
   border: 3px solid #b9b9b9;
