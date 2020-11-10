@@ -526,14 +526,63 @@ body.touch .header__arrow {
 .сallBack {
   position: fixed;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   bottom: 30px;
   right: 30px;
   width: 100px;
   height: 100px;
   border-radius: 50%;
   border: 3px solid #005bc1;
+  z-index: 40;
+  cursor: pointer;
+}
+.сallBack__form {
+  position: absolute;
+  display: none;
+  top: -210px;
+  left: -130px;
+  background-color: #eaeaea;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #bbbaba;
+}
+.сallBack__form.activeCallBack {
+  display: block;
+}
+.сallBack__form input {
+  display: block;
+  margin: 0px 0px 15px 0px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid #aaaaaa;
+  border-radius: 8px;
+  padding: 0px 5px;
+  transition: all 0.5s ease 0s;
+}
+.сallBack__form input:focus {
+  transition: all 0.5s ease 0s;
+  box-shadow: 2px 2px 5px 1px #005bc1;
+}
+.сallBack__btn {
+  display: block;
+  height: 35px;
+  width: 140px;
+  background-color: #005bc1;
+  border-radius: 8px;
+  color: #ffffff;
+  transition: all 0.5s ease 0s;
+}
+.сallBack__btn:hover {
+  background: #0072ff;
+  transition: all 0.5s ease 0s;
+}
+@media (max-width: 767.98px) {
+  .сallBack__btn {
+    height: 30px;
+    width: 100px;
+    font-size: 10px;
+  }
 }
 
 .callBack__body {
@@ -554,7 +603,7 @@ body.touch .header__arrow {
   z-index: 3;
   width: 30px;
 }
-.callBack__body::before {
+.callBack__body:before {
   content: "";
   position: absolute;
   left: 0;
@@ -795,6 +844,97 @@ body.touch .header__arrow {
   text-align: center;
   color: #ffffff;
   font-size: 15px;
+}
+
+.kontaktyi__title {
+  font-size: 32px;
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+}
+.kontaktyi__body {
+  padding: 50px 40px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+}
+.kontaktyi__text {
+  font-size: 16px;
+  line-height: 24px;
+}
+.kontaktyi__text span {
+  display: inline-block;
+  margin: 5px 0px;
+  font-weight: 500;
+}
+.kontaktyi__info p {
+  font-size: 16px;
+  margin: 10px 0px 10px 0px;
+}
+.kontaktyi__info a {
+  display: block;
+  color: #000000c5;
+  font-weight: 500;
+  margin: 0px 0px 10px 0px;
+}
+.kontaktyi__messengers {
+  display: flex;
+  justify-content: left;
+}
+.kontaktyi__messengers img {
+  margin: 0px 5px;
+  max-width: 35px;
+}
+
+.o-kompanii__title {
+  font-size: 32px;
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+}
+.o-kompanii__body {
+  padding: 50px 40px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+}
+.o-kompanii__text {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0px 0px 20px 0px;
+}
+.o-kompanii__text span {
+  display: inline-block;
+  margin: 5px 0px;
+  font-weight: 500;
+}
+.o-kompanii__box {
+  display: flex;
+  background-color: #d4cfcf;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 40px 0px 30px 0px;
+}
+.o-kompanii__left {
+  flex: 0 1 50%;
+}
+.o-kompanii__left ul {
+  display: flex;
+  flex-direction: column;
+}
+.o-kompanii__left li {
+  font-size: 16px;
+  margin: 0px 0px 10px 0px;
+}
+.o-kompanii__left li a {
+  color: #000000c5;
+  position: relative;
+  font-weight: 500;
+}
+.o-kompanii__left li:last-child {
+  margin: 0px;
+}
+.o-kompanii__rigth {
+  flex: 0 1 50%;
+}
+.o-kompanii__rigth img {
+  max-width: 400px;
 }
 
 * {

@@ -1,0 +1,41 @@
+.kontaktyi {
+	&__title {
+		font-size: 32px;
+		text-align: center;
+		margin: 0px 0px 20px 0px;
+	}
+	&__body {
+		padding: 50px 40px;
+		background-color: #f7f7f7;
+		border-radius: 8px;
+	}
+	&__text {
+		font-size: 16px;
+		line-height: 24px;
+		& span {
+			display: inline-block;
+			margin: 5px 0px;
+			font-weight: 500;
+		}
+	}
+	&__info {
+		& p {
+			font-size: 16px;
+			margin: 10px 0px 10px 0px;
+		}
+		& a {
+			display: block;
+			color: #000000c5;
+			font-weight: 500;
+			margin: 0px 0px 10px 0px;
+		}
+	}
+	&__messengers {
+		display: flex;
+      justify-content: left;
+      & img {
+         margin: 0px 5px;
+         max-width: 35px;
+      }
+	}
+}

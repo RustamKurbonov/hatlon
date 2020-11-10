@@ -171,20 +171,21 @@ let sliderReviews = () => {
    
 }
 let сallBackFunction = () => {
-   let сallBack = document.getElementById('сallBack');
-   let widthCallBack = 100;
    let сallBackBody = document.getElementById('сallBackBody');
-   
+   let сallBackForm = document.querySelector('.сallBack__form');
+   let transform = 0;
+
+   сallBackBody.onclick = () => {
+      сallBackForm.classList.toggle('activeCallBack');
+   }
+
    call = setInterval(() => {
-      if (widthCallBack >= 150){
-         widthCallBack = 100;
-         сallBack.style.width = widthCallBack;
-         сallBack.style.height = widthCallBack;
-      } else if (widthCallBack >= 100) {
-         widthCallBack++;
-         сallBack.style.width = widthCallBack;
-         сallBack.style.height = widthCallBack;
-      }   
-   }, 1000);
-   console.log(сallBack.style);
+      if (transform >= 30){
+         transform = 0;
+         сallBackBody.style.transform = 'rotate(' + transform + 'deg)';
+      } else if (transform >= 0) {
+         transform++;
+         сallBackBody.style.transform = 'rotate(' + transform + 'deg)';
+      }
+   }, 20);
 }
