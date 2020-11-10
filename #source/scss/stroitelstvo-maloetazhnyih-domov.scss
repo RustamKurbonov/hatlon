@@ -1,5 +1,5 @@
 //=====================================================
-.fundamentnyie-rabotyi {
+.stroitelstvo-maloetazhnyih-domov {
 	&__title {
 		font-size: 32px;
 		text-align: center;
@@ -9,6 +9,16 @@
 		padding: 20px 20px;
 		background-color: #f7f7f7;
 		border-radius: 8px;
+   }
+   &__box-rev {
+      display: flex;
+      background-color: #f7f7f7;
+		padding: 20px;
+		border-radius: 8px;
+      margin: 40px 0px 30px 0px;
+      @media (max-width:767.98+px){
+			flex-direction: column;
+		}
    }
    &__box {
 		display: flex;

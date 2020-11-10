@@ -228,6 +228,11 @@
     right: 70px;
   }
 }
+@media (max-width: 767.98px) and (max-width: 364.98px) {
+  .header__arrow {
+    right: 40px;
+  }
+}
 @media (max-width: 767.98px) {
   .header__sub-list {
     position: relative;
@@ -961,7 +966,7 @@ body.touch .header__arrow {
 }
 @media (max-width: 479.98px) {
   .o-kompanii__rigth img {
-    max-width: 150px;
+    max-width: 180px;
   }
 }
 
@@ -1032,7 +1037,7 @@ body.touch .header__arrow {
 }
 @media (max-width: 479.98px) {
   .prays-list__rigth img {
-    max-width: 150px;
+    max-width: 180px;
   }
 }
 
@@ -1088,7 +1093,7 @@ body.touch .header__arrow {
 }
 @media (max-width: 479.98px) {
   .fundamentnyie-rabotyi__left-rev img {
-    max-width: 150px;
+    max-width: 220px;
   }
 }
 .fundamentnyie-rabotyi__rigth-rev {
@@ -1124,6 +1129,11 @@ body.touch .header__arrow {
     max-width: 150px;
   }
 }
+@media (max-width: 479.98px) {
+  .fundamentnyie-rabotyi__rigth img {
+    max-width: 220px;
+  }
+}
 .fundamentnyie-rabotyi__text {
   font-size: 16px;
   line-height: 24px;
@@ -1140,47 +1150,127 @@ body.touch .header__arrow {
   line-height: 24px;
   margin: 0px 0px 20px 0px;
 }
-.fundamentnyie-rabotyi__table-body {
+
+.stroitelstvo-maloetazhnyih-domov__title {
+  font-size: 32px;
+  text-align: center;
+  margin: 20px 0px 20px 0px;
+}
+.stroitelstvo-maloetazhnyih-domov__body {
+  padding: 20px 20px;
   background-color: #f7f7f7;
   border-radius: 8px;
+}
+.stroitelstvo-maloetazhnyih-domov__box-rev {
+  display: flex;
+  background-color: #f7f7f7;
   padding: 20px;
-}
-.fundamentnyie-rabotyi__table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.fundamentnyie-rabotyi__table caption {
-  margin: 0px 0px 20px 0px;
-  font-size: 20px;
-}
-.fundamentnyie-rabotyi__table thead {
-  border: 3px solid #b9b9b9;
-  font-size: 16px;
-}
-.fundamentnyie-rabotyi__table thead th:last-child {
-  width: 250px;
+  border-radius: 8px;
+  margin: 40px 0px 30px 0px;
 }
 @media (max-width: 767.98px) {
-  .fundamentnyie-rabotyi__table thead th:last-child {
-    width: 140px;
+  .stroitelstvo-maloetazhnyih-domov__box-rev {
+    flex-direction: column;
   }
 }
-.fundamentnyie-rabotyi__table th, .fundamentnyie-rabotyi__table td {
-  padding: 14px;
-  border: 1px solid #b9b9b9;
+.stroitelstvo-maloetazhnyih-domov__box {
+  display: flex;
+  background-color: #d4cfcf;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 40px 0px 30px 0px;
+}
+@media (max-width: 767.98px) {
+  .stroitelstvo-maloetazhnyih-domov__box {
+    flex-direction: column;
+  }
+}
+.stroitelstvo-maloetazhnyih-domov__left {
+  flex: 0 1 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.stroitelstvo-maloetazhnyih-domov__left-rev {
+  flex: 0 1 50%;
+  margin: 0px 30px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 767.98px) {
+  .stroitelstvo-maloetazhnyih-domov__left-rev {
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+  }
+}
+.stroitelstvo-maloetazhnyih-domov__left-rev img {
+  max-width: 400px;
+}
+@media (max-width: 992.98px) {
+  .stroitelstvo-maloetazhnyih-domov__left-rev img {
+    max-width: 300px;
+  }
 }
 @media (max-width: 479.98px) {
-  .fundamentnyie-rabotyi__table th, .fundamentnyie-rabotyi__table td {
-    padding: 7px;
-    font-size: 12px;
+  .stroitelstvo-maloetazhnyih-domov__left-rev img {
+    max-width: 220px;
   }
 }
-.fundamentnyie-rabotyi__table tbody {
-  border: 3px solid #b9b9b9;
+.stroitelstvo-maloetazhnyih-domov__rigth-rev {
+  flex: 0 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-.fundamentnyie-rabotyi__table tbody tr:hover {
-  background-color: #d4cfcf;
-  transition: all 0.5s ease 0s;
+.stroitelstvo-maloetazhnyih-domov__rigth {
+  flex: 0 1 50%;
+  margin: 0px 0px 0px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 767.98px) {
+  .stroitelstvo-maloetazhnyih-domov__rigth {
+    margin: 20px 0px 0px 0px;
+    text-align: center;
+  }
+}
+.stroitelstvo-maloetazhnyih-domov__rigth img {
+  max-width: 400px;
+}
+@media (max-width: 992.98px) {
+  .stroitelstvo-maloetazhnyih-domov__rigth img {
+    max-width: 300px;
+  }
+}
+@media (max-width: 479.98px) {
+  .stroitelstvo-maloetazhnyih-domov__rigth img {
+    max-width: 150px;
+  }
+}
+@media (max-width: 479.98px) {
+  .stroitelstvo-maloetazhnyih-domov__rigth img {
+    max-width: 220px;
+  }
+}
+.stroitelstvo-maloetazhnyih-domov__text {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0px 0px 20px 0px;
+}
+.stroitelstvo-maloetazhnyih-domov__text span {
+  display: inline-block;
+  margin: 5px 0px;
+  font-weight: 500;
+}
+.stroitelstvo-maloetazhnyih-domov__text-ital {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0px 0px 20px 0px;
 }
 
 * {
@@ -1340,6 +1430,51 @@ body.lock {
   transition: all 0.3s ease-in 0s;
   width: 100%;
   left: 0;
+}
+
+.table-body {
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table caption {
+  margin: 0px 0px 20px 0px;
+  font-size: 20px;
+}
+.table thead {
+  border: 3px solid #b9b9b9;
+  font-size: 16px;
+}
+.table thead th:last-child {
+  width: 250px;
+}
+@media (max-width: 767.98px) {
+  .table thead th:last-child {
+    width: 140px;
+  }
+}
+.table th, .table td {
+  padding: 14px;
+  border: 1px solid #b9b9b9;
+  line-height: 18px;
+}
+@media (max-width: 479.98px) {
+  .table th, .table td {
+    padding: 7px;
+    font-size: 12px;
+  }
+}
+.table tbody {
+  border: 3px solid #b9b9b9;
+}
+.table tbody tr:hover {
+  background-color: #d4cfcf;
+  transition: all 0.5s ease 0s;
 }
 
 .services__content {

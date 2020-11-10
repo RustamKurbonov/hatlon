@@ -5,6 +5,7 @@
 @import "o-kompanii.scss";
 @import "prays-list.scss";
 @import "fundamentnyie-rabotyi.scss";
+@import "stroitelstvo-maloetazhnyih-domov.scss";
 //======================================================================================
 // Шрифт
 $fontfamily: "Roboto";
@@ -101,6 +102,49 @@ body.lock {
 			transition: all 0.3s ease-in 0s;
 			width: 100%;
 			left: 0;
+		}
+	}
+}
+.table-body {
+	background-color: #f7f7f7;
+	border-radius: 8px;
+	padding: 20px;
+}
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	& caption {
+		margin: 0px 0px 20px 0px;
+		font-size: 20px;
+	}
+	& thead {   
+		border: 3px solid #b9b9b9;
+		font-size: 16px;
+		& th {    
+			&:last-child{
+				width: 250px;
+				@media (max-width:767.98px){
+					width: 140px;
+				}
+			}
+		}
+	}
+	& th,td {
+		padding: 14px;
+		border: 1px solid #b9b9b9;
+		line-height: 18px;
+		@media (max-width:479.98px){
+			padding: 7px;
+			font-size: 12px;
+		}
+	}
+	& tbody {
+		border: 3px solid #b9b9b9;
+		& tr {
+			&:hover{
+				background-color: #d4cfcf;
+				transition: all 0.5s ease 0s;
+			}
 		}
 	}
 }
