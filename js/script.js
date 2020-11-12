@@ -3,6 +3,7 @@ window.onload = function () {
    сallBackFunction();
    menuBurger();
    headerSlider();
+   
 }
 let arrowMenu = () => {
    let isMobile = {
