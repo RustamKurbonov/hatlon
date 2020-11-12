@@ -6,20 +6,16 @@
 @import "prays-list.scss";
 @import "fundamentnyie-rabotyi.scss";
 @import "stroitelstvo-maloetazhnyih-domov.scss";
+@import "zemlyanyie-rabotyi.scss";
+@import "kamennyie-rabotyi.scss";
+@import "krovelnyie-rabotyi.scss";
+@import "otdelochnyie-rabotyi.scss";
 //======================================================================================
 // Шрифт
 $fontfamily: "Roboto";
 //======================================================================================
 //Подключаемые шрифты
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-//======================================================================================
-//Перем
-$minwidth:320px;
-$mw:1180;
-$mw1:$mw+12;
-$mw2:992.98;
-$mw3:767.98;
-$mw4:479.98;
 //======================================================================================
 //ОбщиеПараметры
 *{padding: 0;margin: 0;border: 0;}
@@ -37,6 +33,14 @@ a:hover{text-decoration: none;}
 ul li{list-style: none;}
 img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+//======================================================================================
+//Перем
+$minwidth:320px;
+$mw:1180;
+$mw1:$mw+12;
+$mw2:992.98;
+$mw3:767.98;
+$mw4:479.98;
 //======================================================================================
 //БрейкПоинт
 .container{max-width:$mw+px;margin: 0px auto;width: 100%;
@@ -114,7 +118,8 @@ body.lock {
 	width: 100%;
 	border-collapse: collapse;
 	& caption {
-		margin: 0px 0px 20px 0px;
+		color: #ca3d36;
+		margin: 10px 0px 20px 0px;
 		font-size: 20px;
 	}
 	& thead {   

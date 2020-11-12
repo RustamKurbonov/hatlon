@@ -79,12 +79,9 @@ function headerSlider() {
 }
 let сallBackFunction = () => {
    let сallBackBody = document.getElementById('сallBackBody');
-   let сallBack = document.getElementById('сallBack');
    let сallBackForm = document.querySelector('.сallBack__form');
    let transform = 0;
    let x = 60;
-   let y = 100;
-   let rightBody = 30;
 
    сallBackBody.onclick = () => {
       сallBackForm.classList.toggle('activeCallBack');

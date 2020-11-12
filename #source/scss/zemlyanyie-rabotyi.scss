@@ -1,0 +1,98 @@
+//=====================================================
+.zemlyanyie-rabotyi {
+	&__title {
+		font-size: 32px;
+		text-align: center;
+      margin: 20px 0px 20px 0px;
+   }
+   &__body {
+		padding: 20px 20px;
+		background-color: #f7f7f7;
+		border-radius: 8px;
+		& ul {
+			padding: 0px 0px 0px 45px;
+			& li {
+				margin: 0px 0px 10px 10px;
+				font-size: 16px;
+				line-height: 24px;
+				list-style: disc;
+			}
+		}
+		& ol {
+			padding: 0px 0px 0px 45px;
+			margin: 5px 0px 15px 0px;
+			& li {
+				margin: 0px 0px 10px 10px;
+				font-size: 16px;
+				line-height: 24px;
+				list-style: decimal;
+				font-weight: 500;
+			}
+		}
+   }
+   &__box {
+		display: flex;
+		background-color: #d4cfcf;
+		padding: 20px;
+		border-radius: 8px;
+		margin: 40px 0px 30px 0px;	
+		@media (max-width:767.98+px){
+			flex-direction: column;
+		}
+	}
+	&__left {
+      flex: 0 1 50%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+		align-items: center;
+		& ul {
+			padding: 0px 0px 0px 25px;
+			margin: 5px 0px 10px 0px;
+			& li {
+				font-size: 16px;
+				line-height: 24px;
+				list-style: decimal;
+			}
+		}
+	}
+	&__rigth {
+      flex: 0 1 50%;
+      margin: 0px 0px 0px 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+		@media (max-width:767.98+px){
+			margin: 20px 0px 0px 0px;
+			text-align: center;
+		}
+		& img {
+			max-width: 400px;
+			@media (max-width:992.98+px){
+				max-width: 300px;
+			}
+			@media (max-width:479.98+px){
+				max-width: 150px;
+         }
+         @media (max-width:479.98+px){
+				max-width: 220px;
+			}
+		}
+	}
+	&__text {
+		font-size: 16px;
+		line-height: 24px;
+		margin: 0px 0px 20px 0px;
+		& span {
+			display: inline-block;
+			margin: 5px 0px;
+			font-weight: 500;
+		}
+   }
+   &__text-ital {
+      font-style: italic;
+      font-size: 16px;
+		line-height: 24px;
+		margin: 0px 0px 20px 0px;
+   }
+}
