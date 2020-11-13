@@ -429,6 +429,17 @@ body.touch .header__arrow{
 			border-radius: 10px;
 			transition: all 0.5s ease 0s;
 		}
+		& span {
+			display: none;
+			background-color: red;
+			text-align: center;
+			border-radius: 8px;
+			font-size: 15px;
+			color: #ffffff;
+			opacity: 0.8;
+			margin: 10px 0px 0px 0px;
+			padding: 10px 0px 10px 0px;
+		}
 		&._sending {
 			&::after{
 				transition: all 0.5s ease 0s;
@@ -436,8 +447,8 @@ body.touch .header__arrow{
 				visibility: visible;
 			}
 		}
-		&._emptyinput{
-			
+		&._emptyinput span{
+			display: block;
 		}
 		@media (max-width:767.98px){
 			margin: 10px 0px 0px 0px;

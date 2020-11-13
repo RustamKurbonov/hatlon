@@ -18,7 +18,7 @@ window.onload = function () {
 
       if(error === 0){
          form.classList.add('_sending');
-         form.className.remove('_emptyinput');
+         form.classList.remove('_emptyinput');
          let response = await fetch('sendmail.php',{
             method: 'POST',
             body: formData
@@ -33,8 +33,7 @@ window.onload = function () {
             form.classList.remove('_sending');
          }
       } else{
-         form.className.add('_emptyinput');
-         // alert('Введите обязательные поля');
+         form.classList.add('_emptyinput');
       }
    }
 
