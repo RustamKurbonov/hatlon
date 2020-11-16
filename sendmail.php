@@ -10,17 +10,17 @@
    $mail->setLanguage('ru', 'phpmailer/language/');
    $mail->IsHTML(true);
 
-   $mail->setForm('site@hatlon.org', 'Форма в шапке сайта');
+   $mail->setFrom('site@hatlon.org', 'Форма в шапке сайта');
    $mail->addAddress('hatlon152@gmail.com');
    $mail->Subject = 'Заявка на звонок';
 
    $body = '<h1>Заявка на звонок</h1>';
    if(trim(!empty($_POST['name']))){
       $body.='<p><strong>Имя:</strong> ' .$_POST['name'].'</p>';
-   } else if (trim(!empty($_POST['tell']))){
+   }
+   if (trim(!empty($_POST['tell']))){
       $body.='<p><strong>Телефон:</strong> ' .$_POST['tell'].'</p>';
    }
-
    $mail->Body = $body;
 
    if(!$mail->send()) {
@@ -32,7 +32,5 @@
    $response = ['message' => $message];
 
    header('Content-type: application/json');
-   echo json_encode($response);
-
-?>
-   
+   echo json_encode($response);  
+   ?>

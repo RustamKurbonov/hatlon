@@ -1,3 +1,5 @@
+"use strict"
+
 window.onload = function () {
    arrowMenu();
    сallBackFunction();
@@ -6,15 +8,15 @@ window.onload = function () {
    calculator();
    sliderReviews();
 
-   const form = document.getElementById('formHeader');
-   form.addEventListener('submit', formHeaderSend);
+   const formHeader = document.getElementById('formHeader');
+   formHeader.addEventListener('submit', formHeaderSend);
 
    async function formHeaderSend(e) {
       e.preventDefault();
 
-      let error = formValidate(form);
+      let error = formValidate(formHeader);
 
-      let formData = new FormData(form);
+      let formData = new FormData(formHeader);
 
       if(error === 0){
          form.classList.add('_sending');
@@ -32,7 +34,7 @@ window.onload = function () {
             alert('Ошибка');
             form.classList.remove('_sending');
          }
-      } else{
+      } else {
          form.classList.add('_emptyinput');
       }
    }
