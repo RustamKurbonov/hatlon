@@ -1,5 +1,3 @@
-"use strict"
-
 window.onload = function () {
    arrowMenu();
    сallBackFunction();
@@ -11,61 +9,133 @@ window.onload = function () {
    const formHeader = document.getElementById('formHeader');
    formHeader.addEventListener('submit', formHeaderSend);
 
+   const formCalculator = document.getElementById('formCalculator');
+   formCalculator.addEventListener('submit', formCalculatorSend);
+
    async function formHeaderSend(e) {
       e.preventDefault();
 
       let error = formValidate(formHeader);
 
       let formData = new FormData(formHeader);
+      let emptyInfo = document.getElementById('emptyInfoHeader');
 
       if(error === 0){
-         form.classList.add('_sending');
-         form.classList.remove('_emptyinput');
-         let response = await fetch('sendmail.php',{
+         formHeader.classList.add('_sending');
+         formHeader.classList.remove('_emptyinput');
+         formHeader.classList.remove('_successfully');
+         let response = await fetch('sendmailHeader.php',{
             method: 'POST',
             body: formData
          });
          if (response.ok){
             let result = await response.json();
-            alert(result.message);
-            form.reset();
-            form.classList.remove('_sending');
+            formHeader.classList.add('_successfully');
+            emptyInfo.innerHTML = result.message;
+            formHeader.reset();
+            formHeader.classList.remove('_sending');
          } else {
-            alert('Ошибка');
-            form.classList.remove('_sending');
+            formHeader.classList.add('_emptyinput');
+            emptyInfo.innerHTML = result.message;
+            formHeader.classList.remove('_sending');
          }
       } else {
-         form.classList.add('_emptyinput');
+         formHeader.classList.add('_emptyinput');
+         emptyInfo.innerHTML = 'Заполните обязательные поля';
+      }
+   }
+
+   async function formCalculatorSend(e) {
+      e.preventDefault();
+
+      let error = formValidate(formCalculator);
+
+      let formData = new FormData(formCalculator);
+      let emptyInfo = document.getElementById('emptyInfoCalc');
+
+      if (error === 0) {
+         formCalculator.classList.add('_sending');
+         formCalculator.classList.remove('_emptyinput');
+         formCalculator.classList.remove('_successfully');
+         let response = await fetch('sendmail.php', {
+            method: 'POST',
+            body: formData
+         });
+         if (response.ok) {
+            let result = await response.json();
+            formCalculator.classList.add('_successfully');
+            emptyInfo.innerHTML = 'Данные успено отправлены';
+            formCalculator.reset();
+            formCalculator.classList.remove('_sending');
+         } else {
+            formCalculator.classList.add('_emptyinput');
+            emptyInfo.innerHTML = 'Ошибка. Повторите позже'
+            formCalculator.classList.remove('_sending');
+         }
+      } else {
+         formCalculator.classList.add('_emptyinput');
+         emptyInfo.innerHTML = 'Заполните обязательные поля';
       }
    }
 
    function formValidate(form) {
-      let error = 0;
-      let formReq = document.querySelectorAll('._req')
-      
-      for (let ind = 0; ind < formReq.length; ind++){
-         const input = formReq[ind];
-         formRemoveError(input);
-         if(input.value === ''){
-            formAddError(input);
-            error++;
-         } else if (input.classList.contains('_tell')){
-            if (isNaN(input.value)){
+      if (form.id === 'formHeader') {
+         let error = 0;
+         let formReq = document.querySelectorAll('._reqHeader')
+
+         for (let ind = 0; ind < formReq.length; ind++) {
+            const input = formReq[ind];
+            formRemoveError(input);
+            if (input.value === '') {
                formAddError(input);
                error++;
+            } else if (input.classList.contains('_tellHeader')) {
+               if (isNaN(input.value)) {
+                  formAddError(input);
+                  error++;
+               }
             }
          }
+         return error;
+      } else if (form.id === 'formCalculator') {
+         let error = 0;
+         let formReq = document.querySelectorAll('._reqCalc')
+
+         for (let ind = 0; ind < formReq.length; ind++) {
+            const input = formReq[ind];
+            formRemoveError(input);
+            if (input.value === '') {
+               formAddError(input);
+               error++;
+            } else if (input.classList.contains('_tellCalc')) {
+               if (isNaN(input.value)) {
+                  formAddError(input);
+                  error++;
+               }
+            }
+         }
+         return error;
       }
-      return error;
+   
    }
 
    function formRemoveError(input){
-      input.parentElement.classList.remove('_error');
-      input.classList.remove('_error');
+      if (input.parentElement.id === 'formHeader'){
+         input.parentElement.classList.remove('_errorHeader');
+         input.classList.remove('_errorHeader');
+      } else if (input.parentElement.id === 'formCalculator'){
+         input.parentElement.classList.remove('_errorCalc');
+         input.classList.remove('_errorCalc');
+      }
    }
    function formAddError(input) {
-      input.parentElement.classList.add('_error');
-      input.classList.add('_error');
+      if (input.parentElement.id === 'formHeader') {
+         input.parentElement.classList.add('_errorHeader');
+         input.classList.add('_errorHeader');
+      } else if (input.parentElement.id === 'formCalculator') {
+         input.parentElement.classList.add('_errorCalc');
+         input.classList.add('_errorCalc');
+      }
    }
 }
 let arrowMenu = () => {

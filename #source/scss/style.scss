@@ -316,6 +316,46 @@ body.lock {
 	&__body {
 		margin: 20px auto 0px auto;
 		max-width: 300px;
+		position: relative;
+		&::after{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url('../img/loading.gif') center no-repeat;
+			background-color: #fff;
+			opacity: 0;
+			visibility: hidden;
+			border-radius: 10px;
+			transition: all 0.5s ease 0s;
+		}
+		& span {
+			display: none;
+			background-color: red;
+			text-align: center;
+			border-radius: 8px;
+			font-size: 12px;
+			color: #ffffff;
+			opacity: 0.8;
+			margin: 10px 0px 0px 0px;
+			padding: 10px 0px 10px 0px;
+		}
+		&._sending {
+			&::after{
+				transition: all 0.5s ease 0s;
+				opacity: 0.8;
+				visibility: visible;
+			}
+		}
+		&._emptyinput span{
+			display: block;
+		}
+		&._successfully span {
+			display: block;
+			background-color: green;
+		}
 	}
 	&__input-name {
 		display: block;
@@ -329,6 +369,9 @@ body.lock {
 		&:focus{
 			transition: all 0.5s ease 0s;
 			box-shadow: 2px 2px 5px 1px #005bc1;
+		}
+		&._errorCalc {
+			box-shadow: 2px 2px 5px 1px red;
 		}
 		@media (max-width:$mw3+px){
 			margin: 0px 0px 7px 0px;
@@ -346,6 +389,9 @@ body.lock {
 		&:focus{
 			transition: all 0.5s ease 0s;
 			box-shadow: 2px 2px 5px 1px #005bc1;
+		}
+		&._errorCalc {
+			box-shadow: 2px 2px 5px 1px red;
 		}
 		@media (max-width:$mw3+px){
 			margin: 0px 0px 15px 0px;

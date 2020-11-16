@@ -24,7 +24,7 @@
    $mail->Body = $body;
 
    if(!$mail->send()) {
-      $message = 'Ошибка';
+      $message = 'Ошибка. Повторите позже';
    } else {
       $message = 'Данные отправлены!';
    }

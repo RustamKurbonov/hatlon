@@ -331,7 +331,7 @@ body.touch .header__arrow{
 	}
 	&__form {
 		background-color: #eaeaeae7;
-		padding: 35px 25px;
+		padding: 35px 25px 0px 25px;
 		flex: 0 1 50%;
 		border-radius: 8px;
 		@media (max-width:767.98px){
@@ -434,7 +434,7 @@ body.touch .header__arrow{
 			background-color: red;
 			text-align: center;
 			border-radius: 8px;
-			font-size: 15px;
+			font-size: 12px;
 			color: #ffffff;
 			opacity: 0.8;
 			margin: 10px 0px 0px 0px;
@@ -449,6 +449,10 @@ body.touch .header__arrow{
 		}
 		&._emptyinput span{
 			display: block;
+		}
+		&._successfully span {
+			display: block;
+			background-color: green;
 		}
 		@media (max-width:767.98px){
 			margin: 10px 0px 0px 0px;
@@ -470,7 +474,7 @@ body.touch .header__arrow{
 		@media (max-width:767.98px){
 			margin: 0px 0px 7px 0px;
 		}
-		&._error {
+		&._errorHeader {
 			box-shadow: 2px 2px 5px 1px red;
 		}
 	}
@@ -490,7 +494,7 @@ body.touch .header__arrow{
 		@media (max-width:767.98px){
 			margin: 0px 0px 7px 0px;
 		}
-		&._error {
+		&._errorHeader {
 			box-shadow: 2px 2px 5px 1px red;
 		}
 	}
