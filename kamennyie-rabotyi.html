@@ -137,12 +137,13 @@
 				<div class="callBack__body" id="сallBackBody">
 					<img src="img/call.svg" alt="">
 				</div>
-				<form class="сallBack__form" action="">
+				<form class="сallBack__form" id="CallBack" action="#">
 					<label for="сallBack__name">Ваше имя</label>
-					<input id="сallBack__name" type="text" placeholder="Имя">
+					<input id="сallBack__name" class="_reqCallBack" type="text" name="name" placeholder="Имя*">
 					<label for="сallBack__phone">Ваш номер телефона</label>
-					<input id="сallBack__phone" type="text" placeholder="+7 (000) 000-00-00">
+					<input id="сallBack__phone" class="_reqCallBack _tellCallBack" type="text" name="tell" placeholder="+7 (000) 000-00-00*">
 					<button class="сallBack__btn">Заказать звонок</button>
+					<span id="emptyInfoCallBack"></span>
 				</form>
 			</div><section class="kamennyie-rabotyi">
 	<div class="container">
@@ -410,12 +411,24 @@
 								<div class="formSection__title">
 									<h3>Закажите обратный звонок прямо сейчас или позвоните по номеру <a href="tel:+78312913262">+7 (831) 291 32 62</a> и вы получите скидку до <span>15%</span></h3>
 								</div>
-								<form class="formSection__form">
-									<input type="text" class="formSection__name" placeholder="Ваше имя">
-									<input type="text" class="formSection__phone" placeholder="Ваш номер телефона">
-									<input type="text" class="formSection__mail" placeholder="Ваш email">
-									<input type="text" class="formSection__text" placeholder="Ваш вопрос">
+								<form class="formSection__form" id="formFuter" action="#">
+									<input type="text" class="formSection__name _reqFooterForm" name="name" placeholder="Ваше имя*">
+									<input type="text" class="formSection__phone _reqFooterForm _tellFooterForm" name="tell" placeholder="Ваш номер телефона*">
+									<input type="text" class="formSection__mail _reqFooterForm _mail" name="mail" placeholder="Ваш email*">
+									<input type="text" class="formSection__text _reqFooterForm" name="text" placeholder="Ваш вопрос*">
+									<div class="formSection__options">
+										<p>Предпочитаемый вид связи:</p>
+										<div class="formSection__options-item">
+											<input id="typeTell" checked type="radio" value="phone" name="typeCommunication">
+											<label class="formSection__lable" for="typeTell">Телефон</label>
+										</div>
+										<div class="formSection__options-item">
+											<input id="typeMail" type="radio" value="mail" name="typeCommunication">
+											<label class="formSection__lable" for="typeMail">Почта</label>
+										</div>
+									</div>
 									<button class="formSection__btn">Получить консультацию</button>
+									<span id="emptyInfoFooterForm"></span>
 								</form>
 							</div>
 						</div>

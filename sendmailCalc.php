@@ -10,11 +10,11 @@
    $mail->setLanguage('ru', 'phpmailer/language/');
    $mail->IsHTML(true);
 
-   $mail->setFrom('site@hatlon.org', 'Форма в шапке сайта');
+   $mail->setFrom('site@hatlon.org', 'Форма вызова прораба');
    $mail->addAddress('hatlon152@gmail.com');
-   $mail->Subject = 'Заявка на звонок';
+   $mail->Subject = 'Заявка на выезд';
 
-   $body = '<h2>Заявка на звонок</h2>';
+   $body = '<h2>Заявка выезда на объект и консультации</h2>';
    if(trim(!empty($_POST['name']))){
       $body.='<p><strong>Имя:</strong> ' .$_POST['name'].'</p>';
    }

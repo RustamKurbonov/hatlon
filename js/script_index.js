@@ -12,6 +12,12 @@ window.onload = function () {
    const formCalculator = document.getElementById('formCalculator');
    formCalculator.addEventListener('submit', formCalculatorSend);
 
+   const formCallBack = document.getElementById('CallBack');
+   formCallBack.addEventListener('submit', formCallBackSend);
+
+   const formFuter = document.getElementById('formFuter');
+   formFuter.addEventListener('submit', formFuterSend);
+
    async function formHeaderSend(e) {
       e.preventDefault();
 
@@ -57,19 +63,19 @@ window.onload = function () {
          formCalculator.classList.add('_sending');
          formCalculator.classList.remove('_emptyinput');
          formCalculator.classList.remove('_successfully');
-         let response = await fetch('sendmail.php', {
+         let response = await fetch('sendmailCalc.php', {
             method: 'POST',
             body: formData
          });
          if (response.ok) {
             let result = await response.json();
             formCalculator.classList.add('_successfully');
-            emptyInfo.innerHTML = 'Данные успено отправлены';
+            emptyInfo.innerHTML = result.message;
             formCalculator.reset();
             formCalculator.classList.remove('_sending');
          } else {
             formCalculator.classList.add('_emptyinput');
-            emptyInfo.innerHTML = 'Ошибка. Повторите позже'
+            emptyInfo.innerHTML = result.message;
             formCalculator.classList.remove('_sending');
          }
       } else {
@@ -77,6 +83,73 @@ window.onload = function () {
          emptyInfo.innerHTML = 'Заполните обязательные поля';
       }
    }
+
+   async function formCallBackSend(e) {
+      e.preventDefault();
+
+      let error = formValidate(formCallBack);
+
+      let formData = new FormData(formCallBack);
+      let emptyInfo = document.getElementById('emptyInfoCallBack');
+
+      if (error === 0) {
+         formCallBack.classList.add('_sending');
+         formCallBack.classList.remove('_emptyinput');
+         formCallBack.classList.remove('_successfully');
+         let response = await fetch('sendmailCallBack.php', {
+            method: 'POST',
+            body: formData
+         });
+         if (response.ok) {
+            let result = await response.json();
+            formCallBack.classList.add('_successfully');
+            emptyInfo.innerHTML = result.message;
+            formCallBack.reset();
+            formCallBack.classList.remove('_sending');
+         } else {
+            formCallBack.classList.add('_emptyinput');
+            emptyInfo.innerHTML = result.message;
+            formCallBack.classList.remove('_sending');
+         }
+      } else {
+         formCallBack.classList.add('_emptyinput');
+         emptyInfo.innerHTML = 'Заполните обязательные поля';
+      }
+   }
+   
+   async function formFuterSend(e) {
+      e.preventDefault();
+
+      let error = formValidate(formFuter);
+
+      let formData = new FormData(formFuter);
+      let emptyInfo = document.getElementById('emptyInfoFooterForm');
+
+      if (error === 0) {
+         formFuter.classList.add('_sending');
+         formFuter.classList.remove('_emptyinput');
+         formFuter.classList.remove('_successfully');
+         let response = await fetch('sendmailFooter.php', {
+            method: 'POST',
+            body: formData
+         });
+         if (response.ok) {
+            let result = await response.json();
+            formFuter.classList.add('_successfully');
+            emptyInfo.innerHTML = result.message;
+            formFuter.reset();
+            formFuter.classList.remove('_sending');
+         } else {
+            formFuter.classList.add('_emptyinput');
+            emptyInfo.innerHTML = result.message;
+            formFuter.classList.remove('_sending');
+         }
+      } else {
+         formFuter.classList.add('_emptyinput');
+         emptyInfo.innerHTML = 'Заполните обязательные поля';
+      }
+   }
+
 
    function formValidate(form) {
       if (form.id === 'formHeader') {
@@ -115,10 +188,52 @@ window.onload = function () {
             }
          }
          return error;
-      }
-   
-   }
+      } else if (form.id === 'CallBack') {
+         let error = 0;
+         let formReq = document.querySelectorAll('._reqCallBack')
 
+         for (let ind = 0; ind < formReq.length; ind++) {
+            const input = formReq[ind];
+            formRemoveError(input);
+            if (input.value === '') {
+               formAddError(input);
+               error++;
+            } else if (input.classList.contains('_tellCallBack')) {
+               if (isNaN(input.value)) {
+                  formAddError(input);
+                  error++;
+               }
+            }
+         }
+         return error;
+      } else if (form.id === 'formFuter') {
+         let error = 0;
+         let formReq = document.querySelectorAll('._reqFooterForm')
+
+         for (let ind = 0; ind < formReq.length; ind++) {
+            const input = formReq[ind];
+            formRemoveError(input);
+            if (input.value === '') {
+               formAddError(input);
+               error++;
+            } else if (input.classList.contains('_tellFooterForm')) {
+               if (isNaN(input.value)) {
+                  formAddError(input);
+                  error++;
+               }
+            } else if (input.classList.contains('_mail')) {
+               if (emailText(input)){
+                  formAddError(input);
+                  error++;
+               }
+            }
+         }
+         return error;
+      }
+   }
+   function emailText(input){
+      return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+   }
    function formRemoveError(input){
       if (input.parentElement.id === 'formHeader'){
          input.parentElement.classList.remove('_errorHeader');
@@ -126,6 +241,12 @@ window.onload = function () {
       } else if (input.parentElement.id === 'formCalculator'){
          input.parentElement.classList.remove('_errorCalc');
          input.classList.remove('_errorCalc');
+      } else if (input.parentElement.id === 'CallBack') {
+         input.parentElement.classList.remove('_errorCallBack');
+         input.classList.remove('_errorCallBack');
+      } else if (input.parentElement.id === 'formFuter') {
+         input.parentElement.classList.remove('_errorFooter');
+         input.classList.remove('_errorFooter');
       }
    }
    function formAddError(input) {
@@ -135,6 +256,12 @@ window.onload = function () {
       } else if (input.parentElement.id === 'formCalculator') {
          input.parentElement.classList.add('_errorCalc');
          input.classList.add('_errorCalc');
+      } else if (input.parentElement.id === 'CallBack') {
+         input.parentElement.classList.add('_errorCallBack');
+         input.classList.add('_errorCallBack');
+      } else if (input.parentElement.id === 'formFuter') {
+         input.parentElement.classList.add('_errorFooter');
+         input.classList.add('_errorFooter');
       }
    }
 }

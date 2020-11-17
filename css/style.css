@@ -589,8 +589,10 @@ body.touch .header__arrow {
 .сallBack__form {
   position: absolute;
   display: none;
-  top: -210px;
+  top: -255px;
   left: -130px;
+  width: 230px;
+  height: 240px;
   background-color: #eaeaea;
   padding: 20px;
   border-radius: 8px;
@@ -598,6 +600,43 @@ body.touch .header__arrow {
 }
 .сallBack__form.activeCallBack {
   display: block;
+}
+.сallBack__form::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/loading.gif") center no-repeat;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 8px;
+  transition: all 0.5s ease 0s;
+}
+.сallBack__form span {
+  display: none;
+  background-color: red;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin: 10px 0px 0px 0px;
+  padding: 10px 0px 10px 0px;
+}
+.сallBack__form._sending::after {
+  transition: all 0.5s ease 0s;
+  opacity: 0.8;
+  visibility: visible;
+}
+.сallBack__form._emptyinput span {
+  display: block;
+}
+.сallBack__form._successfully span {
+  display: block;
+  background-color: green;
 }
 .сallBack__form input {
   display: block;
@@ -612,6 +651,9 @@ body.touch .header__arrow {
 .сallBack__form input:focus {
   transition: all 0.5s ease 0s;
   box-shadow: 2px 2px 5px 1px #005bc1;
+}
+.сallBack__form input._errorCallBack {
+  box-shadow: 2px 2px 5px 1px red;
 }
 .сallBack__btn {
   display: block;
@@ -722,6 +764,44 @@ body.touch .header__arrow {
 .formSection__form {
   max-width: 500px;
   margin: 20px auto 0px auto;
+  position: relative;
+}
+.formSection__form::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/loading.gif") center no-repeat;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 8px;
+  transition: all 0.5s ease 0s;
+}
+.formSection__form span {
+  display: none;
+  background-color: red;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin: 10px 0px 0px 0px;
+  padding: 10px 0px 10px 0px;
+}
+.formSection__form._sending::after {
+  transition: all 0.5s ease 0s;
+  opacity: 0.8;
+  visibility: visible;
+}
+.formSection__form._emptyinput span {
+  display: block;
+}
+.formSection__form._successfully span {
+  display: block;
+  background-color: green;
 }
 .formSection__name {
   display: block;
@@ -737,6 +817,9 @@ body.touch .header__arrow {
   transition: all 0.5s ease 0s;
   box-shadow: 2px 2px 5px 1px #005bc1;
 }
+.formSection__name._errorFooter {
+  box-shadow: 2px 2px 5px 1px red;
+}
 .formSection__phone {
   display: block;
   margin: 0px 0px 10px 0px;
@@ -750,6 +833,9 @@ body.touch .header__arrow {
 .formSection__phone:focus {
   transition: all 0.5s ease 0s;
   box-shadow: 2px 2px 5px 1px #005bc1;
+}
+.formSection__phone._errorFooter {
+  box-shadow: 2px 2px 5px 1px red;
 }
 .formSection__mail {
   display: block;
@@ -765,6 +851,9 @@ body.touch .header__arrow {
   transition: all 0.5s ease 0s;
   box-shadow: 2px 2px 5px 1px #005bc1;
 }
+.formSection__mail._errorFooter {
+  box-shadow: 2px 2px 5px 1px red;
+}
 .formSection__text {
   display: block;
   margin: 0px 0px 10px 0px;
@@ -778,6 +867,9 @@ body.touch .header__arrow {
 .formSection__text:focus {
   transition: all 0.5s ease 0s;
   box-shadow: 2px 2px 5px 1px #005bc1;
+}
+.formSection__text._errorFooter {
+  box-shadow: 2px 2px 5px 1px red;
 }
 .formSection__btn {
   display: block;
@@ -798,6 +890,55 @@ body.touch .header__arrow {
     width: 130px;
     font-size: 10px;
   }
+}
+.formSection__options {
+  margin: 7px 0px;
+}
+.formSection__options p {
+  color: #5c5c5c;
+  font-weight: 500;
+  margin: 0px 0px 5px 0px;
+}
+.formSection__options-item {
+  margin: 0px 0px 5px 0px;
+}
+.formSection__options-item input {
+  cursor: pointer;
+  display: none;
+}
+.formSection__options-item input:checked + .formSection__lable::after {
+  transition: all 0.3s ease 0s;
+  transform: scale(1);
+}
+.formSection__lable {
+  display: inline-flex;
+  cursor: pointer;
+  color: #5c5c5c;
+  font-weight: 500;
+  align-items: center;
+  position: relative;
+}
+.formSection__lable::before {
+  content: "";
+  flex: 0 0 18px;
+  height: 18px;
+  align-self: flex-start;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 1px solid #7a956b;
+  margin: 0px 10px 0px 0px;
+}
+.formSection__lable::after {
+  content: "";
+  transition: all 0.3s ease 0s;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  background-color: #7a956b;
+  border-radius: 50%;
+  transform: scale(0);
 }
 
 .footer {
@@ -2216,7 +2357,7 @@ body.lock {
   background-color: #fff;
   opacity: 0;
   visibility: hidden;
-  border-radius: 10px;
+  border-radius: 8px;
   transition: all 0.5s ease 0s;
 }
 .calculator__body span {

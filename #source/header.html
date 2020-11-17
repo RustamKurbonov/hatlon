@@ -126,11 +126,12 @@
 				<div class="callBack__body" id="сallBackBody">
 					<img src="img/call.svg" alt="">
 				</div>
-				<form class="сallBack__form" action="">
+				<form class="сallBack__form" id="CallBack" action="#">
 					<label for="сallBack__name">Ваше имя</label>
-					<input id="сallBack__name" type="text" placeholder="Имя">
+					<input id="сallBack__name" class="_reqCallBack" type="text" name="name" placeholder="Имя*">
 					<label for="сallBack__phone">Ваш номер телефона</label>
-					<input id="сallBack__phone" type="text" placeholder="+7 (000) 000-00-00">
+					<input id="сallBack__phone" class="_reqCallBack _tellCallBack" type="text" name="tell" placeholder="+7 (000) 000-00-00*">
 					<button class="сallBack__btn">Заказать звонок</button>
+					<span id="emptyInfoCallBack"></span>
 				</form>
 			</div>
